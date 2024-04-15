@@ -17,8 +17,7 @@ jobs:
           server-password: 'OSSRH_PASSWORD'
           gpg-passphrase:  'MAVEN_GPG_PASSPHRASE'
           gpg-private-key: ${{ secrets.GPG_SECRET }}
-      - name: debug settings.xml
-        run: cat /Users/gowri/.m2/settings.xml
+    
       - name: Publish to Maven Central Repo
         working-directory: /Users/gowri
         run: mvn clean deploy --batch-mode --activate-profiles deploy
