@@ -18,7 +18,7 @@ jobs:
           gpg-passphrase:  'MAVEN_GPG_PASSPHRASE'
           gpg-private-key: ${{ secrets.GPG_SECRET }}
           run: |
-            [[ -z "${GPG_SECRET}" ]] && echo 'does not exist' || echo "exists"
+            [[ -z "${secrets.GPG_SECRET}" ]] && echo 'does not exist' || echo "exists"
       - name: debug settings.xml
         run: cat /home/runner/.m2/settings.xml
       - name: Publish to Maven Central Repo
