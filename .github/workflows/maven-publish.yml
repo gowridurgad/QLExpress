@@ -17,8 +17,12 @@ jobs:
           server-password: 'OSSRH_PASSWORD'
           gpg-passphrase:  'MAVEN_GPG_PASSPHRASE'
           gpg-private-key: ${{ secrets.GPG_SECRET }}
-          run: |
-            [[ -z "${secrets.GPG_SECRET}" ]] && echo 'does not exist' || echo "exists"
+      - name: Check if secret exists
+        run: |
+          if [[ -z "${{ secrets.GPG_SECRET }}" ]]; then 
+            echo "Secret does not exist" 
+          else 
+            echo "Secret exists" 
       - name: debug settings.xml
         run: cat /home/runner/.m2/settings.xml
       - name: Publish to Maven Central Repo
@@ -27,3 +31,4 @@ jobs:
           OSSRH_USER: ${{ secrets.OSSRH_USER }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSWORD }}
+   
