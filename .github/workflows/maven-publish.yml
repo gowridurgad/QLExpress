@@ -23,6 +23,7 @@ jobs:
             echo "Secret does not exist" 
           else 
             echo "Secret exists" 
+          fi
       - name: debug settings.xml
         run: cat /home/runner/.m2/settings.xml
       - name: Publish to Maven Central Repo
