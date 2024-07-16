@@ -1,0 +1,19 @@
+name: issue641
+
+on:
+ workflow_dispatch
+
+jobs:
+  build:
+    name: 'Ubuntu (Node 20, Deno 1.40, Java 21)'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9
+        with:
+          distribution: 'dragonwell'
+          java-version: '21'
