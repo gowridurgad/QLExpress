@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: 'Ubuntu (Node 20, Deno 1.40, Java 21)'
+    name: 'Ubuntu (Node 20, Deno 1.40, Java 17)'
     runs-on: ubuntu-latest
 
     steps:
