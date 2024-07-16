@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: 'Ubuntu (Node 20, Deno 1.40, Java 17)'
+    name: 'Ubuntu (Node 20, Deno 1.40, Java 11)'
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +16,4 @@ jobs:
         uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9
         with:
           distribution: 'dragonwell'
-          java-version: '17'
+          java-version: '11'
