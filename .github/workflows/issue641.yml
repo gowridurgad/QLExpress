@@ -16,4 +16,4 @@ jobs:
         uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9
         with:
           distribution: 'dragonwell'
-          java-version: '21'
+          java-version: '17'
